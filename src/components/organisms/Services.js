@@ -4,19 +4,18 @@ import Button from "../atoms/Button";
 import { useContext } from "react";
 import { CartContext } from "@/context/cart";
 import { productsData } from "@/data";
-import Link from "next/link";
 import Image from "next/image";
 
 const servicesData = [
   {
     title: "Professional Team",
-    image: "/images/about-2.svg",
+    image: "/images/about-1.jpg",
     description:
       "We have a highly skilled and dedicated professional team committed to delivering high-quality educational experiences. Our experts in business leadership, technological innovation, and financial process efficiency bring extensive experience and specialized knowledge to their respective fields.",
   },
   {
     title: "Creative and Interactive",
-    image: "/images/about-1.svg",
+    image: "/images/about-2.jpg",
     description:
       "We stand out by offering interactive and creative courses that go beyond traditional lecture-style sessions. We believe that learning should be engaging, dynamic, and hands-on. Our courses incorporate a variety of interactive elements, such as group discussions, case studies, simulations, and practical exercises. Participants are encouraged to actively participate, ask questions, and collaborate with their peers, fostering a dynamic learning environment.",
   },
@@ -29,26 +28,19 @@ const Services = () => {
     <>
       <section className="bg-white min-h-screen py-28 flex items-center justify-center">
         <div className="container mx-auto px-4 w-full h-full flex flex-col justify-center">
-          <div className="grid grid-cols-2 gap-5 h-full">
+          <div className="flex flex-col gap-5 h-full">
             {servicesData.map((item, i) => (
               <div
-                className="flex items-center gap-10 bg-black text-white p-10"
+                className="flex items-center gap-10 bg-black text-white"
                 key={i}
               >
-                <div className="flex flex-col h-full w-full">
+                <Image src={item.image} width={500} height={500} alt="About" />
+                <div className="flex flex-col h-full w-full p-10">
                   <h1 className="text-xl sm:text-2xl lg:text-3xl font-bold">
                     {item.title}
                   </h1>
 
                   <p className="mt-10">{item.description}</p>
-                </div>
-                <div>
-                  <Image
-                    src={item.image}
-                    width={500}
-                    height={500}
-                    alt="About"
-                  />
                 </div>
               </div>
             ))}

@@ -25,8 +25,17 @@ const Hero = () => {
             </div>
           </div>
 
-          <div className="flex items-center justify-center">
-            <Image src="/images/hero.svg" width={400} height={400} alt="Hero" />
+          <div className="flex items-center justify-end">
+            <div className="relative">
+              <Image
+                src="/images/hero.jpg"
+                width={500}
+                height={500}
+                alt="Hero"
+                className="rounded-lg relative z-10"
+              />
+              <div className="absolute bg-black w-full h-full -bottom-5 -right-5 rounded-lg" />
+            </div>
           </div>
         </div>
       </div>

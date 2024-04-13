@@ -57,10 +57,11 @@ const References = () => {
 
           <div className="flex justify-center">
             <Image
-              src="/images/review.svg"
+              src="/images/review.png"
               width={400}
               height={400}
               alt="Review"
+              className="h-full w-full object-contain"
             />
           </div>
         </div>
