@@ -20,7 +20,7 @@ export default function RootLayout({ children }) {
   return (
     <html lang='en' className='scroll-smooth'>
       <head>
-        <script
+        {/* <script
           dangerouslySetInnerHTML={{
             __html: `
               const style = document?.createElement('style')
@@ -29,7 +29,7 @@ export default function RootLayout({ children }) {
               document?.querySelector('head').prepend(style)
             `,
           }}
-        />
+        /> */}
       </head>
       <body className={`${fontMontserrat.variable} font-montserrat`}>
         <PrimeReactProvider value={value}>
