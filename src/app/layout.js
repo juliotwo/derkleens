@@ -23,10 +23,10 @@ export default function RootLayout({ children }) {
         <script
           dangerouslySetInnerHTML={{
             __html: `
-              const style = document.createElement('style')
+              const style = document?.createElement('style')
               style.innerHTML = '@layer tailwind-base, primereact, tailwind-utilities;'
               style.setAttribute('type', 'text/css')
-              document.querySelector('head').prepend(style)
+              document?.querySelector('head').prepend(style)
             `,
           }}
         />
