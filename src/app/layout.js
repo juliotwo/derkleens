@@ -5,6 +5,7 @@ import './globals.css';
 import { fontMontserrat } from '@/fonts';
 import CartProvider from '@/context/cart';
 import { pageName } from '@/data';
+import Provider from '@/context/provider';
 
 export const metadata = {
   title: pageName,
@@ -32,7 +33,7 @@ export default function RootLayout({ children }) {
       </head>
       <body className={`${fontMontserrat.variable} font-montserrat`}>
         <PrimeReactProvider value={value}>
-          <CartProvider>{children}</CartProvider>
+          <Provider>{children}</Provider>
         </PrimeReactProvider>
       </body>
     </html>

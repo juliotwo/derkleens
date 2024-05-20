@@ -2,7 +2,7 @@
 import { formatNumber } from '@/utils/amounts';
 import Button from '../atoms/Button';
 import { useContext } from 'react';
-import { CartContext } from '@/context/cart';
+import { CartContext } from 'ui-pages-ecommerce';
 import { productsData } from '@/data';
 import Image from 'next/image';
 import { useRouter } from 'next/navigation';

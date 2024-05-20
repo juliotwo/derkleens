@@ -1,8 +1,7 @@
 'use client';
 import React, { useContext } from 'react';
 import { Button } from 'primereact/button';
-import { Listbox } from 'primereact/listbox';
-import { CartContext } from '@/context/cart';
+import { CartContext } from 'ui-pages-ecommerce';
 import Navbar from '@/components/molecules/Navbar';
 import Footer from '@/components/molecules/Footer';
 import { productsData } from '@/data';
@@ -33,7 +32,7 @@ const Product = ({ params }) => {
   };
   return (
     <main>
-      <Navbar />
+      <Navbar isBlack />
       <div className='flex flex-row gap-4 container mx-auto mt-20 mb-20'>
         <div className='w-full'>
           <Card title={product.name} className='mb-4'>

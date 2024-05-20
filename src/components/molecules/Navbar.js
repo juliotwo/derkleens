@@ -1,3 +1,4 @@
+'use client';
 import Link from 'next/link';
 import { AiOutlineShoppingCart } from 'react-icons/ai';
 
@@ -5,13 +6,13 @@ import Button from '../atoms/Button';
 import { navbarOptions, pageName } from '@/data';
 import { twJoin } from 'tailwind-merge';
 
-const Navbar = () => {
+const Navbar = ({ isBlack = false }) => {
   return (
     <nav className='w-full py-4 text-sm bg-black'>
       <div
         className={twJoin(
-          'container px-4 mx-auto flex justify-between items-center h-full',
-          'text-white'
+          `container px-4 mx-auto flex justify-between items-center h-full`,
+          'text-white '
         )}
       >
         <Link href='/' className='text-2xl 2xl:text-2xl font-bold uppercase'>

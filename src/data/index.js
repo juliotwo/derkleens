@@ -34,7 +34,7 @@ export const productsData = [
     description:
       'Equip yourself with the essential skills and knowledge to become an effective business leader in the global marketplace. This comprehensive course covers leadership strategies, decision-making, team management, and effective communication techniques.',
     image: '/images/course-1.jpg',
-    price: '799.99',
+    price: '399.99',
     features: [
       'Strategic planning for business success',
       'Effective delegation and team empowerment',
@@ -42,6 +42,7 @@ export const productsData = [
       'Change management and adaptability strategies',
       'Emotional intelligence and empathetic leadership',
     ],
+    stock: 100,
   },
   {
     id: 2,
@@ -57,6 +58,7 @@ export const productsData = [
       'IoT integration for business optimization',
       'Innovation strategies for industry disruption',
     ],
+    stock: 100,
   },
   {
     id: 3,
@@ -64,7 +66,7 @@ export const productsData = [
     description:
       "Optimize your financial processes and enhance operational efficiency with our in-depth seminar. Learn best practices in financial management, budgeting, risk assessment, and cost optimization to streamline your organization's financial operations.",
     image: '/images/course-3.jpg',
-    price: '11999.99',
+    price: '3999.99',
     features: [
       'Financial management strategies for growth',
       'Budgeting techniques for resource allocation',
@@ -72,6 +74,7 @@ export const productsData = [
       'Cost optimization through process improvement',
       'Compliance and regulatory framework understanding',
     ],
+    stock: 100,
   },
   {
     id: 4,
@@ -79,7 +82,7 @@ export const productsData = [
     description:
       'Discover the latest trends and strategies in strategic marketing at our comprehensive conference. Learn how to develop effective marketing plans, leverage digital channels, and create compelling brand experiences to drive business growth.',
     image: '/images/course-4.jpg',
-    price: '899.99',
+    price: '799.99',
     features: [
       'Market analysis for strategic positioning',
       'Digital marketing tactics for online presence',
@@ -87,6 +90,7 @@ export const productsData = [
       'Integrated marketing communications strategies',
       'Data-driven decision-making in marketing',
     ],
+    stock: 100,
   },
   {
     id: 5,
@@ -102,6 +106,7 @@ export const productsData = [
       'Sustainability reporting and accountability',
       'Ethics training for global business operations',
     ],
+    stock: 100,
   },
   {
     id: 6,
@@ -117,6 +122,7 @@ export const productsData = [
       'Inclusive leadership for diverse teams',
       'Understanding cultural nuances in communication',
     ],
+    stock: 100,
   },
   {
     id: 7,
@@ -132,6 +138,7 @@ export const productsData = [
       'Predictive modeling and machine learning algorithms',
       'Data-driven decision-making frameworks',
     ],
+    stock: 100,
   },
   {
     id: 8,
@@ -139,7 +146,7 @@ export const productsData = [
     description:
       'Enhance your supply chain management skills with our interactive workshop. Explore strategies for optimizing supply chain efficiency, improving logistics, minimizing costs, and mitigating risks in a global supply chain context.',
     image: '/images/course-8.jpg',
-    price: '1499.99',
+    price: '7999.99',
     features: [
       'End-to-end supply chain visibility solutions',
       'Inventory management for cost reduction',
@@ -147,36 +154,7 @@ export const productsData = [
       'Risk mitigation strategies for supply chain resilience',
       'Sustainability initiatives in supply chain management',
     ],
-  },
-  {
-    id: 9,
-    name: 'Digital Transformation Summit',
-    description:
-      'Join industry leaders and experts at our summit dedicated to digital transformation. Gain insights into disruptive technologies, digital strategy development, organizational change management, and creating a culture of innovation.',
-    image: '/images/course-9.jpg',
-    price: '799.99',
-    features: [
-      'Emerging technologies shaping the future',
-      'Strategies for digital innovation adoption',
-      'Change management in digital transformation',
-      'Cultural shifts for fostering innovation culture',
-      'Case studies on successful digital transformations',
-    ],
-  },
-  {
-    id: 10,
-    name: 'Entrepreneurship Bootcamp',
-    description:
-      'Embark on an intensive entrepreneurship bootcamp designed to equip aspiring entrepreneurs with the knowledge, skills, and resources needed to launch and grow successful businesses. Learn from experienced entrepreneurs, industry experts, and business mentors.',
-    image: '/images/course-10.jpg',
-    price: '2499.99',
-    features: [
-      'Business model canvas for startup planning',
-      'Pitching techniques for attracting investors',
-      'Growth hacking strategies for rapid expansion',
-      'Mentorship and networking opportunities',
-      'Legal and financial fundamentals for entrepreneurs',
-    ],
+    stock: 100,
   },
 ];
 
