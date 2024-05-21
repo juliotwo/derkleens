@@ -68,8 +68,6 @@ const CartSectionComponent = () => {
     console.log('data', data);
     setIsLoading(true);
     await sleep(2000);
-    setIsLoading(false);
-
     const merchantTransaction =
       pageName + '-' + createRandomNumberTransaction();
 
