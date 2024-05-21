@@ -65,9 +65,8 @@ const CartSectionComponent = () => {
 
   const total = isValidDiscount ? 10 : getTotalCart();
   const onPaymentResult = async (data) => {
-    console.log('data', data);
     setIsLoading(true);
-    await sleep(2000);
+
     const merchantTransaction =
       pageName + '-' + createRandomNumberTransaction();
 
@@ -81,7 +80,7 @@ const CartSectionComponent = () => {
         cvv: data.cardCvv,
       },
       customer: {
-        merchant_customer_id: '331415',
+        merchant_customer_id: '331416',
         first_name: data.firstname,
         second_name: '',
         first_surname: data.lastname,
@@ -120,7 +119,6 @@ const CartSectionComponent = () => {
     await sleep(2000);
     const dataRes = await ApiTransaction.makeTransaction(body);
 
-    console.log('dataRes', dataRes);
     if (dataRes?.content?.status === 'success') {
       let idTransaction = dataRes?.content?.merchant_transaction_id;
 
@@ -160,7 +158,7 @@ const CartSectionComponent = () => {
             <CartSection
               onClickBuyMore={() => router.push('/#shop')}
               onClickGoHome={() => router.push('/')}
-              variant='table'
+              variant='grid'
               gridColumns={2}
             />
           )}
@@ -174,6 +172,8 @@ const CartSectionComponent = () => {
               onClickGoHome={() => router.push('/')}
               isLoading={isLoading}
               totalDiscount={isValidDiscount ? 10 : 0}
+              formVariant='filled'
+              stepperWithIcons
             />
           )}
 
