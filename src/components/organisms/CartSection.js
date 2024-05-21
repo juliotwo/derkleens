@@ -1,13 +1,12 @@
 'use client';
 import { useContext, useState } from 'react';
-import { useRouter } from '@/navigation';
 
-import { useTranslations } from 'next-intl';
 import { ApiTransaction } from '@/api/api';
 // import { optionsStates, pageName, phoneNumber } from "@/data";
 // import { ProgressSpinner } from "primereact/progressspinner";
 import { CartSection, Button, Payments, CartContext } from 'ui-pages-ecommerce';
 import { pageName } from '@/data';
+import { useRouter } from 'next/navigation';
 
 const validDiscountCode = ['CAPAPAY10', 'CAPAPAY20'];
 
