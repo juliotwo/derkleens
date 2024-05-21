@@ -21,7 +21,6 @@ const CartSectionComponent = () => {
   const [isValidDiscount, setIsValidDiscount] = useState(false);
   const [isLoading, setIsLoading] = useState(false);
   const router = useRouter();
-  const t = useTranslations('Cart');
 
   const createRandomNumberTransaction = () => {
     return Math.floor(Math.random() * 1000000000);
@@ -29,7 +28,7 @@ const CartSectionComponent = () => {
   const extractMessage = (str) => {
     console.log(str);
     if (!str || str === '' || str === 'null' || str === undefined) {
-      return t('error-not-found');
+      return 'An unexpected error occurred. Please try again later.';
     }
     const match = str.match(/message:\s*(.+)/);
     if (match) {
