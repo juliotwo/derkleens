@@ -2,7 +2,7 @@ import axios from 'axios';
 import { TRANSACTION, SEND_EMAIL } from './urls';
 
 const API_KEY =
-  '6N3EO55S1n7IYCZuAoNRphyTm6Pzn0OoKrcMn4FneRYaYBO0WeaV3Co2bzYXKSwx';
+  '6HAJ0ULOkAjeNKT336d2puzZu5QGA2LtFjggpgGaKk3Gt6l14KkFaIT7H34bQkJt';
 // const API_KEY =
 //   'zwgqaebUA0pr2q0iEcpu20gySPqD40x8ssMLGyPwtecfjq7w5RYyyvmlrlIhFGRO'; // dev
 export const ApiTransaction = {
@@ -12,7 +12,7 @@ export const ApiTransaction = {
         headers: {
           'Content-Type': 'application/json',
           'MERCHANT-API-KEY':
-            '6N3EO55S1n7IYCZuAoNRphyTm6Pzn0OoKrcMn4FneRYaYBO0WeaV3Co2bzYXKSwx',
+            '6HAJ0ULOkAjeNKT336d2puzZu5QGA2LtFjggpgGaKk3Gt6l14KkFaIT7H34bQkJt',
         },
       });
       return response.data;
