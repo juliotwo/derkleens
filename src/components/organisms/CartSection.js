@@ -37,7 +37,7 @@ const CartSectionComponent = () => {
               type='primary'
               onClick={() => setStep(step === 'cart' ? 'payment' : 'cart')}
             >
-              {step === 'cart' ? 'Go to Pay Form' : 'Back to Cart Section'}
+              {step === 'cart' ? 'Go to Pay' : 'Back to Cart'}
             </Button>
           </div>
         </div>
