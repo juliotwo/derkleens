@@ -2,11 +2,11 @@
 import { useContext, useState } from 'react';
 
 import { ApiTransaction } from '@/api/api';
-// import { optionsStates, pageName, phoneNumber } from "@/data";
-// import { ProgressSpinner } from "primereact/progressspinner";
+
 import { CartSection, Button, Payments, CartContext } from 'ui-pages-ecommerce';
 import { pageName } from '@/data';
 import { useRouter } from 'next/navigation';
+import { FaChevronLeft } from 'react-icons/fa';
 
 const validDiscountCode = ['CAPAPAY10', 'CAPAPAY20'];
 
@@ -154,13 +154,33 @@ const CartSectionComponent = () => {
   return (
     <div className='w-full flex justify-center mt-10 mb-20'>
       <div className='container px-4'>
+        <Button
+          value='back'
+          onClick={() => {
+            if (step === 'payment') {
+              setStep('cart');
+              return;
+            }
+            router.push('/#shop');
+          }}
+          icon={<FaChevronLeft />}
+          iconPosition='start'
+          className='flex items-center mb-5 w-28'
+        >
+          Back
+        </Button>
         <div className='flex flex-col gap-5'>
           {step === 'cart' && (
             <CartSection
               onClickBuyMore={() => router.push('/#shop')}
               onClickGoHome={() => router.push('/')}
-              variant='grid'
+              variant='table'
               gridColumns={2}
+              buttonProps={{
+                onClick: () => setStep(step === 'cart' ? 'payment' : 'cart'),
+                label: 'Go to pay',
+                className: 'bg-red-500 text-white',
+              }}
             />
           )}
 
@@ -173,20 +193,12 @@ const CartSectionComponent = () => {
               onClickGoHome={() => router.push('/')}
               isLoading={isLoading}
               totalDiscount={isValidDiscount ? 10 : 0}
-              formVariant='filled'
-              stepperWithIcons
+              buttonBackProps={{
+                className: 'text-black',
+                label: 'Back',
+              }}
             />
           )}
-
-          <div>
-            <Button
-              disabled={products.length === 0}
-              type='primary'
-              onClick={() => setStep(step === 'cart' ? 'payment' : 'cart')}
-            >
-              {step === 'cart' ? 'Go to Pay' : 'Back to Cart'}
-            </Button>
-          </div>
         </div>
       </div>
     </div>
