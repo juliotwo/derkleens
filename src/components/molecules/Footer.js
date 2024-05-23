@@ -46,7 +46,7 @@ const Footer = () => {
           </div>{' '}
           <p>{address}</p>
         </div>
-        <div className='flex items-center justify-between w-full mt-10'>
+        {/* <div className='flex items-center justify-between w-full mt-10'>
           <div className='flex gap-5 items-center'>
             <Image
               alt='Whatsapp'
@@ -64,7 +64,7 @@ const Footer = () => {
               src={'/images/instagram.png'}
             />
           </div>
-        </div>
+        </div> */}
       </div>
     </footer>
   );
