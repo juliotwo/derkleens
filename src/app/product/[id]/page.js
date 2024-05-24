@@ -1,7 +1,7 @@
 'use client';
 import React, { useContext } from 'react';
 import { Button } from 'primereact/button';
-import { CartContext } from 'ui-pages-ecommerce';
+import { CartContext, Button as VButton } from 'ui-pages-ecommerce';
 import Navbar from '@/components/molecules/Navbar';
 import Footer from '@/components/molecules/Footer';
 import { productsData } from '@/data';
@@ -9,6 +9,8 @@ import { Column } from 'primereact/column';
 import { DataTable } from 'primereact/datatable';
 import { Card } from 'primereact/card';
 import { Image } from 'primereact/image';
+import { useRouter } from 'next/navigation';
+import { FaChevronLeft } from 'react-icons/fa';
 
 const Product = ({ params }) => {
   const id = params.id;
@@ -21,6 +23,7 @@ const Product = ({ params }) => {
     id: index,
     feature,
   }));
+  const router = useRouter();
 
   const featureBodyTemplate = (rowData) => {
     return (
@@ -33,7 +36,20 @@ const Product = ({ params }) => {
   return (
     <main>
       <Navbar isBlack />
-      <div className='flex flex-row gap-4 container mx-auto mt-20 mb-20'>
+      <div className='container mx-auto mt-10'>
+        <VButton
+          value='back'
+          onClick={() => {
+            router.push('/#courses');
+          }}
+          icon={<FaChevronLeft />}
+          iconPosition='start'
+          className='flex items-center mb-5 w-28'
+        >
+          Back
+        </VButton>
+      </div>
+      <div className='flex flex-row gap-4 container mx-auto mt-10 mb-20'>
         <div className='w-full'>
           <Card title={product.name} className='mb-4'>
             <Image
@@ -61,7 +77,7 @@ const Product = ({ params }) => {
                 label={isAdded ? 'Remove course' : 'Buy course'}
                 onClick={() => handleAddOrRemoveProduct(product.id)}
                 size='large'
-                className='mt-5'
+                className={`mt-5 ${isAdded ? 'bg-red-500' : ''}`}
               />
             </div>
           </Card>

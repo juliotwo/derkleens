@@ -9,6 +9,7 @@ import { useRouter } from 'next/navigation';
 import { FaChevronLeft } from 'react-icons/fa';
 
 const validDiscountCode = ['CAPAPAY10', 'CAPAPAY20'];
+const colorRed = '#F73939';
 
 const sleep = (ms) => {
   return new Promise((resolve) => setTimeout(resolve, ms));
@@ -161,7 +162,7 @@ const CartSectionComponent = () => {
               setStep('cart');
               return;
             }
-            router.push('/#shop');
+            router.push('/#courses');
           }}
           icon={<FaChevronLeft />}
           iconPosition='start'
@@ -172,14 +173,18 @@ const CartSectionComponent = () => {
         <div className='flex flex-col gap-5'>
           {step === 'cart' && (
             <CartSection
-              onClickBuyMore={() => router.push('/#shop')}
+              onClickBuyMore={() => router.push('/#courses')}
               onClickGoHome={() => router.push('/')}
               variant='table'
               gridColumns={2}
               buttonProps={{
                 onClick: () => setStep(step === 'cart' ? 'payment' : 'cart'),
                 label: 'Go to pay',
+                backgroundColor: 'white',
                 className: 'bg-red-500 text-white',
+                style: {
+                  backgroundColor: colorRed,
+                },
               }}
             />
           )}
@@ -189,13 +194,23 @@ const CartSectionComponent = () => {
               isValidDiscountCode={isValidDiscount}
               handleChangeDiscountCode={onChangeDiscount}
               onPaymentResult={onPaymentResult}
-              onClickBuyMore={() => router.push('/#shop')}
+              onClickBuyMore={() => router.push('/#courses')}
               onClickGoHome={() => router.push('/')}
               isLoading={isLoading}
               totalDiscount={isValidDiscount ? 10 : 0}
               buttonBackProps={{
                 className: 'text-black',
                 label: 'Back',
+                style: {
+                  color: 'black',
+                },
+              }}
+              buttonNextProps={{
+                className: 'bg-red-500 text-white',
+                style: {
+                  color: 'white',
+                  backgroundColor: colorRed,
+                },
               }}
             />
           )}

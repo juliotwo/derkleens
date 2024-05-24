@@ -2,7 +2,7 @@ export const pageName = 'Derkleens';
 export const email = 'info@derkleens.com';
 export const address =
   'AV TINTORETO 92 1 ER OFICINA 101 COLONIA CIUDAD DE LOS DEPORTES BENITO JUAREZ CIUDAD DE MEXICO CP 03710';
-export const phoneNumber = '+5520725849';
+export const phoneNumber = '+525520725849';
 export const phoneWhatsApp = '+525520725849';
 export const navbarOptions = [
   {
@@ -50,7 +50,7 @@ export const productsData = [
     description:
       'Stay ahead of the curve with our hands-on workshop focused on technological innovation. Explore emerging technologies, such as artificial intelligence, blockchain, and Internet of Things (IoT), and learn how to leverage them to drive innovation and gain a competitive edge.',
     image: '/images/course-7.jpg',
-    price: '599.99',
+    price: '2599.99',
     features: [
       'Exploration of cutting-edge technologies',
       'Hands-on experience with AI applications',

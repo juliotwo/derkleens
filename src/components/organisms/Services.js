@@ -90,7 +90,7 @@ const Services = () => {
                     </h2>
 
                     <Button
-                      className='mt-2'
+                      className={`mt-2 ${isAdded ? 'bg-red-500' : ''}`}
                       label={isAdded ? 'Remove course' : 'Select course'}
                       onClick={() => handleAddOrRemoveProduct(item.id)}
                     />
