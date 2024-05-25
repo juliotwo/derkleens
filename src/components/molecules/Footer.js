@@ -30,6 +30,7 @@ const Footer = () => {
             {footerOptions.map((item, i) => (
               <Link
                 href={item.href}
+                target='_blank'
                 className='font-medium hover:underline'
                 key={i}
               >
