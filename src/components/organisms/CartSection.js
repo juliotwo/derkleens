@@ -26,7 +26,6 @@ const CartSectionComponent = () => {
     return Math.floor(Math.random() * 1000000000);
   };
   const extractMessage = (str) => {
-    console.log(str);
     if (!str || str === '' || str === 'null' || str === undefined) {
       return 'An unexpected error occurred. Please try again later.';
     }
@@ -46,13 +45,14 @@ const CartSectionComponent = () => {
     nameCard = ''
   ) => {
     const services = interProducts?.map((item) => item.name)?.join(', ');
-    console.log('services', services);
+    const total = isValidDiscount ? 10 : getTotalCart();
+
     const data = {
       email_for_admin_data: {
         client: pageName,
         email: email,
         name: nameCard,
-        amount: getTotalCart(),
+        amount: total.toFixed(2),
         phone_number: '+52' + phone,
         service: services,
         order_number: idTransaction,
@@ -95,8 +95,8 @@ const CartSectionComponent = () => {
           postal_code: data.codePostal,
           colony: '',
           city: data.city,
-          state_code: 'EM',
-          state_name: 'Mexico',
+          state_code: data.state?.slice(0, 2).toUpperCase(),
+          state_name: data.state,
           country_code: 'MX',
           country_name: 'Mexico',
         },
@@ -106,15 +106,15 @@ const CartSectionComponent = () => {
           postal_code: data.codePostal,
           colony: '',
           city: data.city,
-          state_code: 'EM',
-          state_name: 'Mexico',
+          state_code: data.state?.slice(0, 2).toUpperCase(),
+          state_name: data.state,
           country_code: 'MX',
           country_name: 'Mexico',
         },
         nationality: 'MX',
         gender: 'male',
       },
-      amount: total,
+      amount: total.toFixed(2),
       currency: 'MXN',
       description: 'Pago de evento',
     };
@@ -149,8 +149,6 @@ const CartSectionComponent = () => {
   };
   const onChangeDiscount = (value) => {
     setIsValidDiscount(validDiscountCode.includes(value));
-
-    console.log('onChangeDiscount', value);
   };
   return (
     <div className='w-full flex justify-center mt-10 mb-20'>
@@ -194,8 +192,14 @@ const CartSectionComponent = () => {
               isValidDiscountCode={isValidDiscount}
               handleChangeDiscountCode={onChangeDiscount}
               onPaymentResult={onPaymentResult}
-              onClickBuyMore={() => router.push('/#courses')}
-              onClickGoHome={() => router.push('/')}
+              buttonBuyMoreProps={{
+                label: 'Buy more',
+                onClick: () => router.push('/#courses'),
+              }}
+              buttonGoHomeProps={{
+                label: 'Go home',
+                onClick: () => router.push('/'),
+              }}
               isLoading={isLoading}
               totalDiscount={isValidDiscount ? 10 : 0}
               buttonBackProps={{
