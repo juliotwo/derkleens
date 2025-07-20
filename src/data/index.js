@@ -160,11 +160,11 @@ export const productsData = [
 
 export const footerOptions = [
   {
-    href: '/pdf/AP.pdf',
+    href: '/pdf/AP-SDERKLEENS-MAYO-2024.pdf',
     name: 'Privacy',
   },
   {
-    href: '/pdf/TYC.pdf',
+    href: '/pdf/TYC-SDERKLEENS-MAYO-2024.pdf',
     name: 'Terms',
   },
 ];
