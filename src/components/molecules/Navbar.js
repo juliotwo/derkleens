@@ -5,8 +5,9 @@ import { AiOutlineShoppingCart } from 'react-icons/ai';
 import Button from '../atoms/Button';
 import { navbarOptions, pageName } from '@/data';
 import { twJoin } from 'tailwind-merge';
+import { G } from 'ecommerce-mxtech/dist/CSSMotionList-B6iervKD';
 
-const Navbar = ({ isBlack = false }) => {
+const Navbar = ({ isBlack = false, withCart = false }) => {
   return (
     <nav className='w-full py-4 text-sm bg-black'>
       <div
@@ -31,17 +32,21 @@ const Navbar = ({ isBlack = false }) => {
               </Link>
             ))}
           </div>
-          <Link href='/my-cart'>
-            <Button
-              label={
-                <div className='flex gap-2 items-center'>
-                  Cart <AiOutlineShoppingCart size={16} />
-                </div>
-              }
-              variant='primary'
-              withShadow={false}
-            />
-          </Link>
+          {withCart ? (
+            <Link href='/my-cart'>
+              <Button
+                label={
+                  <div className='flex gap-2 items-center'>
+                    Cart <AiOutlineShoppingCart size={16} />
+                  </div>
+                }
+                variant='primary'
+                withShadow={false}
+              />
+            </Link>
+          ) : (
+            <GetAQuoteButton />
+          )}
         </div>
       </div>
     </nav>
@@ -49,3 +54,11 @@ const Navbar = ({ isBlack = false }) => {
 };
 
 export default Navbar;
+
+const GetAQuoteButton = () => {
+  return (
+    <Link href='/get-a-quote'>
+      <Button label='Get a Quote' variant='primary' withShadow={false} />
+    </Link>
+  );
+};
