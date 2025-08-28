@@ -5,7 +5,6 @@ import { AiOutlineShoppingCart } from 'react-icons/ai';
 import Button from '../atoms/Button';
 import { navbarOptions, pageName } from '@/data';
 import { twJoin } from 'tailwind-merge';
-import { G } from 'ecommerce-mxtech/dist/CSSMotionList-B6iervKD';
 
 const Navbar = ({ isBlack = false, withCart = false }) => {
   return (
