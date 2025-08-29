@@ -69,7 +69,7 @@ const Services = ({ isHome = true }) => {
           </h1>
 
           <div className='w-full grid grid-cols-4 gap-5 mt-10'>
-            {productsData.slice(0, 7).map((item, i) => {
+            {productsData.slice(0, 8).map((item, i) => {
               const isAdded = validateProductInCart(item.id);
 
               return (
@@ -129,7 +129,7 @@ const Services = ({ isHome = true }) => {
             </h1>
 
             <div className='w-full grid grid-cols-4 gap-5 mt-10'>
-              {productsData.slice(8, 12).map((item, i) => {
+              {productsData.slice(8, 13).map((item, i) => {
                 const isAdded = validateProductInCart(item.id);
 
                 return (
