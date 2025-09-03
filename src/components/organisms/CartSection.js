@@ -3,7 +3,7 @@ import { useContext, useState } from 'react';
 
 import { ApiTransaction } from '@/api/api';
 
-import { CartSection, Button, Payments, CartContext } from 'ui-pages-ecommerce';
+import { CartSection, Button, Payments, CartContext } from 'ui-old-version';
 import { pageName } from '@/data';
 import { useRouter } from 'next/navigation';
 import { FaChevronLeft } from 'react-icons/fa';
@@ -44,7 +44,12 @@ const CartSectionComponent = () => {
     idTransaction = '',
     nameCard = ''
   ) => {
-    const services = interProducts?.map((item) => item.name)?.join(', ');
+    const services = interProducts?.map((item) => {
+      return {
+        name: item.name,
+        price: parseFloat(item.price),
+      };
+    });
     const total = isValidDiscount ? 10 : getTotalCart();
 
     const data = {
@@ -171,6 +176,7 @@ const CartSectionComponent = () => {
         <div className='flex flex-col gap-5'>
           {step === 'cart' && (
             <CartSection
+              currency='USD'
               onClickBuyMore={() => router.push('/#courses')}
               onClickGoHome={() => router.push('/')}
               variant='table'
@@ -189,6 +195,7 @@ const CartSectionComponent = () => {
 
           {step === 'payment' && (
             <Payments
+              currency='USD'
               isValidDiscountCode={isValidDiscount}
               handleChangeDiscountCode={onChangeDiscount}
               onPaymentResult={onPaymentResult}

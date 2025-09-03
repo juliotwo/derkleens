@@ -1,6 +1,6 @@
 'use client';
 import { productsData } from '@/data';
-import { MainProvider } from 'ui-pages-ecommerce';
+import { MainProvider } from 'ui-old-version';
 
 const Provider = ({ children }) => {
   return (

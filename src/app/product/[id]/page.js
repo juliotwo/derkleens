@@ -1,7 +1,7 @@
 'use client';
 import React, { useContext } from 'react';
 import { Button } from 'primereact/button';
-import { CartContext, Button as VButton } from 'ui-pages-ecommerce';
+import { CartContext, Button as VButton } from 'ui-old-version';
 import Navbar from '@/components/molecules/Navbar';
 import Footer from '@/components/molecules/Footer';
 import { productsData } from '@/data';
