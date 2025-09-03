@@ -10,7 +10,7 @@ import Navbar from '@/components/molecules/Navbar';
 export default function Home() {
   return (
     <main>
-      <Navbar textBlack={false} />
+      <Navbar textBlack={false} withCart={true} />
 
       <Services isHome={false} />
 

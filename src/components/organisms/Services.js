@@ -69,67 +69,9 @@ const Services = ({ isHome = true }) => {
           </h1>
 
           <div className='w-full grid grid-cols-4 gap-5 mt-10'>
-            {productsData.slice(0, 8).map((item, i) => {
-              const isAdded = validateProductInCart(item.id);
-
-              return (
-                <div
-                  className='bg-white flex flex-col rounded-xl shadow-lg shadow-green-500'
-                  key={i}
-                >
-                  <Image
-                    // onClick={() => navigation.push(`/product/${item.id}`)}
-                    src={item.image}
-                    alt='course image'
-                    width={400}
-                    height={400}
-                    className='w-full h-60 object-cover rounded-t-xl hover:cursor-pointer hover:opacity-90'
-                  />
-                  <div className='flex flex-col w-full p-5 gap-1 flex-1'>
-                    <h1 className='text-sm font-medium uppercase'>
-                      {item.name}
-                    </h1>
-                    <div className='flex-1'>
-                      <p className='text-[10px]'>{item.description}</p>
-                    </div>
-                    <h2 className='font-bold text-sm my-2 text-right'>
-                      {item.price} USD
-                    </h2>
-
-                    <Button
-                      className={`mt-2 ${isAdded ? 'bg-red-500' : ''}`}
-                      label={
-                        isHome
-                          ? 'Get a Quote'
-                          : isAdded
-                          ? 'Remove from cart'
-                          : 'Add to cart'
-                      }
-                      onClick={() => {
-                        if (isHome) {
-                          navigation.push(`/contact`);
-                          return;
-                        }
-                        handleAddOrRemoveProduct(item.id);
-                      }}
-                    />
-                  </div>
-                </div>
-              );
-            })}
-          </div>
-        </section>
-        {!isHome && (
-          <section
-            id='courses'
-            className='flex flex-col container mx-auto px-4 min-h-screen justify-center py-28'
-          >
-            <h1 className='text-xl sm:text-2xl lg:text-3xl xl:text-4xl font-bold uppercase text-white'>
-              Our Additionals
-            </h1>
-
-            <div className='w-full grid grid-cols-4 gap-5 mt-10'>
-              {productsData.slice(8, 13).map((item, i) => {
+            {productsData
+              .filter((item) => parseFloat(item.price) > 60)
+              .map((item, i) => {
                 const isAdded = validateProductInCart(item.id);
 
                 return (
@@ -177,6 +119,68 @@ const Services = ({ isHome = true }) => {
                   </div>
                 );
               })}
+          </div>
+        </section>
+        {!isHome && (
+          <section
+            id='courses'
+            className='flex flex-col container mx-auto px-4 min-h-screen justify-center py-28'
+          >
+            <h1 className='text-xl sm:text-2xl lg:text-3xl xl:text-4xl font-bold uppercase text-white'>
+              Our Additionals
+            </h1>
+
+            <div className='w-full grid grid-cols-4 gap-5 mt-10'>
+              {productsData
+                .filter((item) => parseFloat(item.price) < 60)
+                .map((item, i) => {
+                  const isAdded = validateProductInCart(item.id);
+
+                  return (
+                    <div
+                      className='bg-white flex flex-col rounded-xl shadow-lg shadow-green-500'
+                      key={i}
+                    >
+                      <Image
+                        // onClick={() => navigation.push(`/product/${item.id}`)}
+                        src={item.image}
+                        alt='course image'
+                        width={400}
+                        height={400}
+                        className='w-full h-60 object-cover rounded-t-xl hover:cursor-pointer hover:opacity-90'
+                      />
+                      <div className='flex flex-col w-full p-5 gap-1 flex-1'>
+                        <h1 className='text-sm font-medium uppercase'>
+                          {item.name}
+                        </h1>
+                        <div className='flex-1'>
+                          <p className='text-[10px]'>{item.description}</p>
+                        </div>
+                        <h2 className='font-bold text-sm my-2 text-right'>
+                          {item.price} USD
+                        </h2>
+
+                        <Button
+                          className={`mt-2 ${isAdded ? 'bg-red-500' : ''}`}
+                          label={
+                            isHome
+                              ? 'Get a Quote'
+                              : isAdded
+                              ? 'Remove from cart'
+                              : 'Add to cart'
+                          }
+                          onClick={() => {
+                            if (isHome) {
+                              navigation.push(`/contact`);
+                              return;
+                            }
+                            handleAddOrRemoveProduct(item.id);
+                          }}
+                        />
+                      </div>
+                    </div>
+                  );
+                })}
             </div>
           </section>
         )}
